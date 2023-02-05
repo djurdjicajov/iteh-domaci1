@@ -84,10 +84,13 @@ $filmovi=Film::vratiSve($mysqli,$order);
         <div class="col-md-2"></div>
     </div>
 
+    
+    
 </body>
 
 
 </html>
+
 <script>  
  $(document).ready(function(){  
       $(document).on('click', '.column_sort', function(){  
@@ -117,3 +120,4 @@ $filmovi=Film::vratiSve($mysqli,$order);
  });  
 
  </script> 
+ 
