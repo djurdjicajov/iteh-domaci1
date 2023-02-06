@@ -4,6 +4,7 @@
 include "server/konekcija.php";
 include "server/domain/zanr.php";
 include "server/domain/film.php";
+require_once 'functions.php';
 
 $order = '';
 
@@ -17,6 +18,14 @@ $filmovi=Film::vratiSve($mysqli,$order);
     <?php
         include('head.php');
     ?>
+    <!-- Stylesheet file -->
+<link rel="stylesheet" href="css/style.css">
+
+<!-- jQuery library -->
+<script src="js/jquery.min.js"></script>
+
+<!-- SweetAlert plugin to display alert -->
+<script src="js/sweetalert.min.js"></script>
         <title>Repertorar</title>
 </head>
 
@@ -84,7 +93,9 @@ $filmovi=Film::vratiSve($mysqli,$order);
         <div class="col-md-2"></div>
     </div>
 
-    
+    <div id="calendar_div">
+		<?php echo getCalender(); ?>
+	</div>
     
 </body>
 
