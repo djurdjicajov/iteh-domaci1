@@ -28,9 +28,13 @@ CREATE TABLE `events` (
   `modified` datetime NOT NULL,
   `status` tinyint(1) NOT NULL DEFAULT 1 COMMENT '1=Active | 0=Inactive',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 /*Data for the table `events` */
+
+insert  into `events`(`id`,`title`,`date`,`created`,`modified`,`status`) values 
+(1,'Premijera Avatara','2023-02-06','0000-00-00 00:00:00','0000-00-00 00:00:00',1),
+(2,'Premijera Avatara','2023-02-07','0000-00-00 00:00:00','0000-00-00 00:00:00',1);
 
 /*Table structure for table `film` */
 
@@ -46,9 +50,14 @@ CREATE TABLE `film` (
   PRIMARY KEY (`id`),
   KEY `zanr` (`zanr`),
   CONSTRAINT `film_ibfk_1` FOREIGN KEY (`zanr`) REFERENCES `zanr` (`id_zanra`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `film` */
+
+insert  into `film`(`id`,`naslov`,`cena`,`trajanje`,`datum`,`zanr`) values 
+(5,'Avatar',1050,185,'2023-02-27',1),
+(6,'Uzoran gradjanin',500,110,'2023-02-14',2),
+(7,'Vrisak',700,110,'2023-02-15',3);
 
 /*Table structure for table `zanr` */
 
@@ -58,9 +67,14 @@ CREATE TABLE `zanr` (
   `id_zanra` int(11) NOT NULL AUTO_INCREMENT,
   `naziv_zanra` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id_zanra`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `zanr` */
+
+insert  into `zanr`(`id_zanra`,`naziv_zanra`) values 
+(1,'naucna fantastika'),
+(2,'drama'),
+(3,'horor');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
